@@ -42,7 +42,7 @@ btnGarlandGenerateRef.addEventListener('click', btnGarlandGenerateHandler);
 btnGarlandSwitchRef.addEventListener('click', btnGarlandSwitchHandler);
 
 function btnGarlandGenerateHandler() {
-  const bolls = getRandomNumber(10);
+  const bolls = getRandomNumber(100);
   outputRef.textContent = `Generated ${bolls}`;
   garlandBoxRef.innerHTML = '';
   garlandBoxRef.append(...createBoxes(bolls));
