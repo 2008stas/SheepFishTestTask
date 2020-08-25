@@ -32,28 +32,24 @@ const createBoxes = amount => {
 
 let isFlashingOn = 0;
 
-const getElementsList = () => {
-  childNodes;
-};
+const getElementsList = () => garlandBoxRef.childNodes;
 
-const changeAllColor = () => {};
+const changeAllColor = () => {
+  getElementsList().forEach(el => (el.style.backgroundColor = getRandomColor()));
+};
 
 btnGarlandGenerateRef.addEventListener('click', btnGarlandGenerateHandler);
 btnGarlandSwitchRef.addEventListener('click', btnGarlandSwitchHandler);
 
 function btnGarlandGenerateHandler() {
-  const bolls = getRandomNumber(100);
+  const bolls = getRandomNumber(10);
   outputRef.textContent = `Generated ${bolls}`;
   garlandBoxRef.innerHTML = '';
   garlandBoxRef.append(...createBoxes(bolls));
-
-  console.dir(garlandBoxRef);
 }
 
 function btnGarlandSwitchHandler() {
   isFlashingOn = !isFlashingOn;
-  console.log('isFlashingOn', isFlashingOn);
-  console.log('window.onfocus', window.onfocus);
   if (isFlashingOn) {
     setInterval(changeAllColor, 1000);
   }
