@@ -1,5 +1,7 @@
 'use strict';
 
+'use strict';
+
 const btnGarlandGenerateRef = document.querySelector('#garland-generate');
 const btnGarlandSwitchRef = document.querySelector('#garland-switch');
 const garlandBoxRef = document.querySelector('.garland-box');
@@ -63,10 +65,9 @@ function btnGarlandGenerateHandler() {
 
 function btnGarlandSwitchHandler() {
   isFlashingOn = !isFlashingOn;
-  btnGarlandSwitchRef.textContent = isFlashingOn ? 'ON garland' : 'OFF garland';
+  btnGarlandSwitchRef.textContent = isFlashingOn ? 'OFF garland' : 'ON garland';
   clearInterval(flashing);
   if (isFlashingOn) {
-    console.log('qqqqq');
     flashing = setInterval(changeAllColor, intervalTime);
   }
 }
