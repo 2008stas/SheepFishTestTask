@@ -1,11 +1,9 @@
 'use strict';
 
-'use strict';
-
 const btnGarlandGenerateRef = document.querySelector('#garland-generate');
 const btnGarlandSwitchRef = document.querySelector('#garland-switch');
-const garlandBoxRef = document.querySelector('.garland-box');
-const outputRef = document.querySelector('.output');
+const garlandBoxRef = document.querySelector('.js-garland-box');
+const outputRef = document.querySelector('.js-output');
 
 const intervalTime = 1000;
 let isFlashingOn = false;
@@ -22,15 +20,12 @@ const getRandomIntegerNumber = maxRandom => {
 };
 
 const createBoxes = amount => {
-  const boxSize = 30;
   const boxesList = [];
   for (let i = 0; i < amount; i += 1) {
     boxesList[i] = document.createElement('div');
+    boxesList[i].textContent = i + 1;
     boxesList[i].style.backgroundColor = currentRandomColor[i] = getRandomColor();
-    boxesList[i].style.width = `${boxSize}px`;
-    boxesList[i].style.height = `${boxSize}px`;
-    boxesList[i].style.display = `inline-block`;
-    boxesList[i].style.borderRadius = '50%';
+    boxesList[i].classList.add('js-box');
   }
   return boxesList;
 };
@@ -51,6 +46,10 @@ const changeAllColor = () => {
   });
 };
 
+const changeBtnGarlandSwitchLabel = () => {
+  btnGarlandSwitchRef.textContent = isFlashingOn ? 'OFF garland' : 'ON garland';
+};
+
 btnGarlandGenerateRef.addEventListener('click', btnGarlandGenerateHandler);
 btnGarlandSwitchRef.addEventListener('click', btnGarlandSwitchHandler);
 
@@ -58,6 +57,7 @@ function btnGarlandGenerateHandler() {
   clearInterval(flashing);
   const balls = getRandomIntegerNumber(100);
   isFlashingOn = false;
+  changeBtnGarlandSwitchLabel();
   outputRef.textContent = `Generated ${balls}`;
   garlandBoxRef.innerHTML = '';
   garlandBoxRef.append(...createBoxes(balls));
@@ -65,7 +65,7 @@ function btnGarlandGenerateHandler() {
 
 function btnGarlandSwitchHandler() {
   isFlashingOn = !isFlashingOn;
-  btnGarlandSwitchRef.textContent = isFlashingOn ? 'OFF garland' : 'ON garland';
+  changeBtnGarlandSwitchLabel();
   clearInterval(flashing);
   if (isFlashingOn) {
     flashing = setInterval(changeAllColor, intervalTime);

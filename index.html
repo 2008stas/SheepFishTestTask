@@ -7,32 +7,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content=" JS, task" />
     <meta name="description" content="task  HTML CSS and JS" />
-
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body class="body">
-    <header class="container header-container"></header>
-    <main class="main-container container">
+    <header class="container header-container">
       <h1 class="title main-title">TEST TASK FOR SHEEP.FISH</h1>
+    </header>
+    <main class="container main-container">
+      <section class="task" id="task1">
+        <h2 class="title task__title">Garland</h2>
+        <div class="garland">
+          <div class="garland__control">
+            <button class="button garland__button" type="button" id="garland-generate">
+              Generate garland
+            </button>
+            <button class="button garland__button" type="button" id="garland-switch">
+              ON garland
+            </button>
+            <div class="garland__output js-output"></div>
+          </div>
+          <div class="garland__garland-box js-garland-box"></div>
+        </div>
+      </section>
 
-      <div class="task" id="task1">
-        <div class="control">
-          <button class="garland" type="button" id="garland-generate">Generate garland</button>
-          <button class="garland" type="button" id="garland-switch">ON garland</button>
-          <div class="output"></div>
+      <section class="task" id="task2">
+        <h2 class="title task__title">Slider</h2>
+        <div class="slider-box">
+          <div class="slides js-slides-list">
+            <span class="slide">Slide 1</span>
+            <span class="slide">Slide 2</span>
+            <span class="slide">Slide 3</span>
+            <span class="slide">Slide 4</span>
+            <span class="slide">Slide 5</span>
+          </div>
         </div>
 
-        <div class="garland-box"></div>
-      </div>
-      <div class="task" id="task1"></div>
+        <div class="slider__dots-box js-dotsBox"></div>
+
+        <div class="slider__control">
+          <button class="button slider__button" type="button" id="btn-prev">prev</button>
+          <button class="button slider__button" type="button" id="btn-next">next</button>
+        </div>
+      </section>
     </main>
 
     <!-- TASK1 -->
-
     <script src="./js/index.js" type="module"></script>
-
     <script src="./js/task1.js" type="module"></script>
     <script src="./js/task2.js" type="module"></script>
 
