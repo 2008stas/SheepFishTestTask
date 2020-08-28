@@ -25,7 +25,7 @@ const createBoxes = amount => {
     boxesList[i] = document.createElement('div');
     boxesList[i].textContent = i + 1;
     boxesList[i].style.backgroundColor = currentRandomColor[i] = getRandomColor();
-    boxesList[i].classList.add('js-box');
+    boxesList[i].classList.add('garland__item');
   }
   return boxesList;
 };

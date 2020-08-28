@@ -74,23 +74,29 @@ html {
 }
 
 .title {
+  margin: 0;
 }
 
-.main-title {
+.main__title {
 }
 
-.task-title {
+.task__title {
+  margin-bottom: 20px;
 }
 
 .task {
   border-radius: 5px;
   border: 2px solid rgb(144, 0, 0);
   border-radius: 5px;
-  padding: 10px;
+  padding: 15px;
   margin: 0;
   font-family: sans-serif;
   background-color: cornsilk;
   position: relative;
+}
+
+.task:not(:last-child) {
+  margin-bottom: 5px;
 }
 
 /* HEADER */
@@ -98,9 +104,9 @@ html {
 .header-container {
   border: 2px solid rgb(144, 0, 0);
   border-radius: 5px;
-  padding: 5px;
+  padding: 15px;
   background-color: cornsilk;
-  margin-bottom: 1px;
+  margin-bottom: 5px;
 }
 
 /* MAIN */
@@ -125,10 +131,21 @@ html {
   display: inline-block;
 }
 
-.garland__garland-box {
+.garland__list {
   display: flex;
+  flex-direction: row;
   justify-content: left;
+  align-items: start;
   flex-wrap: wrap;
+}
+
+.garland__item {
+  direction: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 6px;
 }
 
 /* SLIDER */
@@ -154,26 +171,20 @@ html {
 }
 
 .slide {
-  height: 300px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 2px solid rgb(144, 0, 0);
   border-radius: 2px;
+  overflow: hidden;
 }
 
 .slider__img {
-  display: inline-block;
-  height: 40px;
-  border: 2px solid rgb(144, 0, 0);
+  display: block;
   border-radius: 5px;
-  margin: 5px;
   transition: all 0.5s ease-in-out;
-}
-
-.slider__img--active {
-  border: 6px solid rgb(144, 0, 0);
+  object-fit: cover;
+  height: 300px;
 }
 
 .slider__dots-box {
@@ -182,18 +193,26 @@ html {
 }
 
 .slider__dot {
-  height: 30px;
-  width: 30px;
-  padding: 8px;
-  font-size: 10px;
-  text-align: center;
+  height: 40px;
+  width: 40px;
   border: 2px solid rgb(144, 0, 0);
   border-radius: 50%;
   cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .slider__dot--active {
   border: 4px solid rgb(144, 0, 0);
+  font-weight: 700;
+}
+
+.slider__dot-img {
+  object-fit: fill;
+  height: 100%;
 }
 
 .slider__control {
