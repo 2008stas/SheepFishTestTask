@@ -184,6 +184,7 @@ html {
   transition: all 0.5s ease-in-out;
   object-fit: cover;
   height: 300px;
+  border: 2px solid cornsilk;
 }
 
 .slider__dots-box {
